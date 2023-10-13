@@ -92,8 +92,15 @@ readers15(R) :- reader(IR, R, _), borrowing(IR, IB, _, _), \+ didNotReturn(IR), 
 (Beware: it is possible that they read books of an author more than once and in between they read books of another author. 
 Borrowing of several books is allowed, but they must all be of the same author, i. e. a meticulous reader will not borrow a book from a new author until he has returned all the books of the present author.*/
 % not correct
-meticulousReader(R) :- reader(IR, R, _), borrowing(IR, IB, _, _), book(IB, _, A), \+ differentA(IR, A).
-differentA(IR, A) :- borrowing(IR, IB, _, _), book(IB, _, A1), \+ A = A1.
+bookSerie(IR, D1, D2, IB1, IB2) :- borrowing(IR, IB1, D1, _), borrowing(IR, IB2, D2, _), \+ IB1 = IB2, book(IB1, _, A), book(IB2, _, A), \+ interuption(IR, D1, D2, A).
+interuption(IR, D1, D2, A) :- borrowing(IR, IB, D, _), book(IB, _, A1), \+ A = A1, D1 =< D, D =< D2.
+interuption(IR, D1, D2, A) :- borrowing(IR, IB, _, D), book(IB, _, A1), \+ A = A1, \+ D = 'null', D1 =< D, D =< D2.
+interuption(IR, D1, D2, A) :- borrowing(IR, IB, D, null), book(IB, _, A1), \+ A = A1, D =< D1, borrowing(_, _, _, D2).
+interuption(IR, D1, D2, A) :- borrowing(IR, IB, D, null), book(IB, _, A1), \+ A = A1, D =< D2, borrowing(_, _, D1, _).
 
+completeSerie(IR, IB1, D1) :- book(IB1, _, A), book(IB2, _, A), \+ IB2 = IB1, borrowing(IR, IB1, D1, _), borrowing(IR, IB2, D2, _), \+ bookSerie(IR, D1, D2, IB1, IB2).
+notComplete(IR) :- borrowing(IR, IB1, _, _), borrowing(IR, IB2, _, _), \+ IB1 = IB2, \+ completeSerie(IR, IB1, _).
+onlyCompleteSeries(R) :- reader(IR, R, _), \+ notComplete(IR).
+
+    
 /* Check whether all the rules you have used are safe. */
-
