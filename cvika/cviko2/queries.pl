@@ -57,7 +57,7 @@ nonEmptyD(D) :- emp(_, _, _, _, _, _, D).
 emptyD(N) :- dept(D, N, _), \+ nonEmptyD(D).
 
 /* 13. Which employees manage only clerks? */
-isNot(C) :- emp(C, _, clerk, _, _, _, _).
+isNot(C) :- emp(C, _, salesman, _, _, _, _).
 isNot(C) :- emp(C, _, manager, _, _, _, _).
 isNot(C) :- emp(C, _, president, _, _, _, _).
 clerk(D) :- emp(C, _, _, _, _, _, D), \+isNot(C).

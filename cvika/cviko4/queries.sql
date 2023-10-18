@@ -6,9 +6,10 @@
 SELECT DISTINCT job
 FROM emp;
 
-/* DO NOT use aggregate functions like MIN() in the following queries. */
-
 /* 2. Print names and hiring dates of all clerks. */
+SELECT name, hiredate
+FROM emp
+WHERE job = 'clerk';
 
 /* 3. List names and jobs of all employees. */
   
@@ -22,7 +23,7 @@ FROM emp;
 
 /* 8. Print jobs of employees who work in Chicago. */
 
-/* 9. For each employee, print a list of all coworkers, that is, list all tuples [Employee_name, Location, Coworker]. */
+/* 9. For each employee, print a list of all coworkers, that is, list all tuples [Employee name, Locations, Coworker]. */
 
 /* 10. Print names of employees together with names of their managers. */
 
@@ -36,13 +37,9 @@ FROM emp;
 
 /* 15. Which employees manage only clerks? */
 
-/* 16. Which departments employ only salesmen? */
+/* 16. Which departments employ no salesmen? */
 
-/* 17. Which departments employ only people earning more than 1500? */
+/* 17. Find names of all employees who are subordinates of Blake (both direct and indirect). */
 
-/* 18. Which employees have the lowest salary in their department? */
-
-/* 19. Find pairs of departments such that each employee in the first department has higher salary than every employee in the second department. */
-
-/* 20. List all departments where no two employess have the same salary, and for each of them, list the employee that has the second lowest salary in their department. (The result should be tuples [Department_name, Department_location, Employee].) */
+/* 18. Determine if there are two employees having the same wage. */
 
