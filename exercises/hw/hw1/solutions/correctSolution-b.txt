@@ -1,0 +1,14 @@
+true.
+
+[a_p2,default_a04]
+[a_p2,default_a10]
+[b_p000,default_a05]
+[b_p001,default_a04]
+[b_p002,default_a03]
+[b_p003,default_a08]
+[b_p004,default_a04]
+[b_p1,default_a01]
+8 tuples.
+false.
+
+

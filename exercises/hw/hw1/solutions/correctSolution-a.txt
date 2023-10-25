@@ -1,0 +1,19 @@
+true.
+
+[a_p1,default_k01]
+[a_p2,default_k01]
+[a_p2,default_k02]
+[a_p2,default_k03]
+[a_p2,default_k06]
+[b_p000,default_k01]
+[b_p001,default_k07]
+[b_p002,default_k04]
+[b_p003,default_k01]
+[b_p004,default_k10]
+[default_p02,default_k05]
+[default_p02,default_k10]
+[default_p09,default_k01]
+13 tuples.
+false.
+
+

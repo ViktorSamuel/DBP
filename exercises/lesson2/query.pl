@@ -20,4 +20,3 @@ writelist([H | T]) :-
 	write(H),
 	write('\n'),
 	writelist(T).
-

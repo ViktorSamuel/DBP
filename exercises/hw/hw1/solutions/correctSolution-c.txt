@@ -1,0 +1,12 @@
+true.
+
+[default_p19,default_a08]
+[default_p19,default_a09]
+[default_p19,default_a12]
+[default_p20,default_a02]
+[default_p20,default_a04]
+[default_p20,default_a10]
+6 tuples.
+false.
+
+
