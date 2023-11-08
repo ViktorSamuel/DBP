@@ -1,0 +1,5 @@
+[{000214A0-0000-0000-C000-000000000046}]
+Prop3=19,11
+[InternetShortcut]
+IDList=
+URL=https://sourceforge.net/p/postgres-xl/postgres-xl/ci/56008fbd7d08d3e8719ca2c91013507fdd011d3f/tree/src/test/regress/expected/with.out
