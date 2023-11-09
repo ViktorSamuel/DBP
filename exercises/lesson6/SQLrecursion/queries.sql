@@ -1,7 +1,0 @@
--- Napíšte rekurzívny dotaz, ktorý vypočíta hodnotu n! (faktoriál) pre n = 10.
--- Napíšte rekurzívny dotaz, ktorý vypočíta hodnotu 30. Fibonacciho čísla.
--- Uvažujme databázu zamestnancov, ktorú sme používali na predošlých cvičeniach. Nájdite ku každému manažérovi zoznam jeho podriadených a ku každému podriadenému uveďte, či je priamy alebo nepriamy.
--- Vytvorte si databázu ciest medzi mestami (roads.sql) a napíšte dotaz, ktorý zistí:
--- odkiaľ sa dá dostať do Ríma
--- odkiaľ sa dá dostať do Ríma po prejdení najviac 1000 km
--- Kamionista prejde za jeden deň maximálne 720km. Vytvorte tabuľku dvojíc [mesto, pocet_dni, pocet_miest], kde pocet_miest určuje počet miest do ktorých za dá dostať z mesta mesto za pocet_dni dní.

@@ -7,6 +7,10 @@
 
 BEGIN;
 
+drop table if exists city;
+drop table if exists country;
+drop table if exist countrylanguage;
+
 SET client_encoding = 'LATIN1';
 
 CREATE TABLE city (

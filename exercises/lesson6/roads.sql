@@ -35,4 +35,3 @@ INSERT INTO road VALUES (8, 9, 4155.44);
 INSERT INTO road (SELECT id2, id1, d FROM road);
 
 COMMIT;
-
