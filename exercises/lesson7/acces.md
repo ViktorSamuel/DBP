@@ -25,7 +25,6 @@
    INSERT INTO test_vasemeno VALUES (1, 'a');
    INSERT INTO test_vasemeno VALUES (2, 'b');
    ```
-# Správa prístupových práv v PostgreSQL
 
 2. **Prideľte právo na SELECT z tejto tabuľky role "test" (ďalej testovacia rola) a overte pomocou \z, či je naozaj pridelené.**
 
