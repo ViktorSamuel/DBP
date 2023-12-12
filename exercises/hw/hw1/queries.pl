@@ -24,7 +24,8 @@ návstevách, tvoria s rastúcim casom neklesajúcu postupnost. Nájdite vsetky 
 také, ze pijan P je silne závislý na alkohole A.
 */
 answer_b(P, A) :- navstivil(I, P, _, _), vypil(I, A, _), \+ navstivilCapujeNepil(P, A), \+ menej(P, A).
-navstivilCapujeNepil(P, A) :- capuje(K, A, _), navstivil(I, P, K, _), \+ vypil(I, A, M), vypil(_, _, M).
+navstivilCapujeNepil(P, A) :- capuje(K, A, _), navstivil(I, P, K, _), \+ pil(I, A).
+pil(I,A) :- vypil(I,A,_).
 menej(P, A) :- navstivil(I, P, _, Od), vypil(I, A, M), navstivil(I1, P, _, Od1), vypil(I1, A, M1), Od < Od1, M > M1. 
 
 
@@ -36,7 +37,8 @@ Nájdite dvojice [P, A] také, ze pijan P lúbi alkohol A a v kazdej krcme, ktor
 je P jediným rekordérom v pití A na jedno posedenie.
 */
 answer_c(P, A) :- lubi(P, A), \+ capujeAleNenavstivil(P, A), \+ niektoVypilViac(P, A).
-capujeAleNenavstivil(P, A) :- capuje(K, A, _), \+ navstivil(I, P, K, Od), navstivil(I, _, _, _), navstivil(_, _, _, Od).
+capujeAleNenavstivil(P, A) :- capuje(K, A, _), \+ navsteva(P, K).
+navsteva(P, K) :- navstivil(_, P, K, _).
 niektoVypilViac(P, A) :- capuje(K, A, _), navstivil(I, P, K, _), vypil(I, A, M), najviac(K, P, A, M), navstivil(I1, P1, K, _), vypil(I1, A, M1), \+ P = P1, M1 >= M.
 
 najviac(K, P, A, M) :- navstivil(I, P, K, _), vypil(I, A, M), \+ nieNajviac(K, P, A, M).
